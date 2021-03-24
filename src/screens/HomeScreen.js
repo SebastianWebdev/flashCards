@@ -1,6 +1,6 @@
 import React from "react"
 import getGlobalStyle from "../globalStyles/globalStyles"
-import {colors,getColors} from "../constants/constants"
+import {colors,getColors,languagePrefixes} from "../constants/constants"
 import getText from "../languages/language"
 import {
 	View,
@@ -19,11 +19,10 @@ return (
 	)
   }
   const dictionary = {
-	  header:
-	  {
-		  pl_PL:"To jest text lokalny po Polsku",
-	  en_EN:"This is text in english"
-	}
+	  header:{
+	    pl_PL:"To jest text lokalny po Polsku",
+	    en_EN:"This is text in english"
+	  }
 	}
   const getTranslation = getText(dictionary)
   const styles = StyleSheet.create({

@@ -1,4 +1,5 @@
-const language = "pl_PL"
+import {languagePrefixes} from "../constants/constants"
+const language = languagePrefixes.pl_PL
 const createDictionary = (dictionary={})=>{
 const copy = {...dictionary}
 return (textID)=>{
