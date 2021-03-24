@@ -13,12 +13,19 @@ import {
 return (
 	<ScrollView style={styles.mainWrap}>
 		<Text style={getGlobalStyle().text}>
-			{getText("HomeScreen mainText")}
+			{getTranslation("header")}
 		</Text>
 	</ScrollView>
 	)
   }
-  const texts = getText()
+  const dictionary = {
+	  header:
+	  {
+		  pl_PL:"To jest text lokalny po Polsku",
+	  en_EN:"This is text in english"
+	}
+	}
+  const getTranslation = getText(dictionary)
   const styles = StyleSheet.create({
 	  mainWrap:{
 		  backgroundColor:getColors().backgroundDark
