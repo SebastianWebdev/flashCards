@@ -1,7 +1,7 @@
 import React from "react"
 import getGlobalStyle from "../globalStyles/globalStyles"
-import {colors,getColors,languagePrefixes} from "../constants/constants"
-import getText from "../languages/language"
+import {colors, getColors, languagePrefixes} from "../constants/constants"
+import createDictionary from "../languages/language"
 import {
 	View,
 	Text,
@@ -24,7 +24,7 @@ return (
 	    en_EN:"This is text in english"
 	  }
 	}
-  const getTranslation = getText(dictionary)
+  const getTranslation = createDictionary(dictionary)
   const styles = StyleSheet.create({
 	  mainWrap:{
 		  backgroundColor:getColors().backgroundDark
