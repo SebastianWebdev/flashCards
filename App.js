@@ -1,58 +1,22 @@
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
-
-import React from 'react';
+import React, {useEffect} from 'react';
 // importnig redux stuff
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
 
-// importing Screens
-import HomeScreen from './src/screens/HomeScreen';
-import CardEditScreen from './src/screens/HomeScreen';
-import TutorialScreen from './src/screens/TutorialScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
-import EditScreen from './src/screens/EditScreen';
-import GameScreen from './src/screens/GameScreen';
 // importing constants
 import {colors} from './src/constants/constants';
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
+
+// importing Initial Component
+import Init from './src/screens/InitialScreen';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator
-          headerMode="screen"
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: colors.backgroundDark,
-            },
-          }}>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{title: 'Home'}}></Stack.Screen>
-          <Stack.Screen name="Game" component={GameScreen}></Stack.Screen>
-          <Stack.Screen
-            name="Edit Card"
-            component={CardEditScreen}></Stack.Screen>
-          <Stack.Screen name="Edit" component={EditScreen}></Stack.Screen>
-          <Stack.Screen
-            name="Settings"
-            component={SettingsScreen}></Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Init />
     </Provider>
   );
 };

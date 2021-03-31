@@ -1,5 +1,6 @@
 'use-strict';
 const theme = 'dark';
+
 const _COLORS = Object.freeze({
   themes: {
     dark: {
@@ -13,6 +14,7 @@ const _COLORS = Object.freeze({
     },
   },
 });
+
 const fontSizes = Object.freeze({
   XS: 14,
   S: 16,
@@ -20,6 +22,7 @@ const fontSizes = Object.freeze({
   L: 20,
   XL: 22,
 });
+
 const fontSizesCards = Object.freeze({
   default: 18,
   XS: 14,
@@ -27,6 +30,7 @@ const fontSizesCards = Object.freeze({
   L: 20,
   XL: 22,
 });
+
 const fonts = Object.freeze({
   poppins: {
     extraLight: 'Poppins-ExtraLight',
@@ -36,7 +40,9 @@ const fonts = Object.freeze({
     SemiBold: 'Poppins-SemiBold',
   },
 });
+
 const languagePrefixes = Object.freeze({pl_PL: 'pl_PL', en_EN: 'en_EN'});
+
 const getColors = () => {
   switch (theme) {
     case 'dark':
@@ -46,15 +52,19 @@ const getColors = () => {
       break;
   }
 };
+
 const colors = getColors();
+
 const INITIAL_STATE = Object.freeze({
   settings: {},
-  courses: [],
+  courses: [{}],
 });
+
 const SOLID_STORAGE_KEYS = Object.freeze({
   SETTINGS: 'settings',
   COURSES: 'courses',
 });
+
 export {
   colors,
   fontSizes,
